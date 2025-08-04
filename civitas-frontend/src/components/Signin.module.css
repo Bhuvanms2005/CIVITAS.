@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #eef1f4;
+}
+
+.formBox {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 80px auto;
+}
+
+.signinContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#heading {
+  color: #333;
+}
+
+#label1, #label2 {
+  color: #333;
+  font-size: 20px;
+  font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+}
+
+#email, #password {
+  width: 300px;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.button { 
+  background-color: #9a63c9;
+  width: 250px;
+  font-size: 18px;
+  margin-top: 20px;
+  line-height: 32px;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  padding: 0 15px; 
+}
+
+.button:hover {
+  background-color: #723ba3;
+}
+
+#errorMsg { 
+  margin: 10px auto;
+  font-weight: 500;
+}
+
+.formGroup {
+  text-align: center;
+  margin-top: 18px;
+}
+
+
+.googleButton {
+  background-color: #9a63c9; 
+  color: white;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 10px; 
+  width: 250px; 
+  margin-top: 15px; 
+}
+
+.googleButton:hover {
+  background-color: #723ba3;
+}
+
+.googleIcon {
+  font-weight: bold;
+  font-size: 20px;
+  
+}
+
+
+.orDivider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.orDivider::before,
+.orDivider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.orDivider:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.orDivider:not(:empty)::after {
+  margin-left: .25em;
+}
+
+.homeLinkWrapper {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.homeLink {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #00796b;
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid #00796b;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.homeLink:hover {
+  background-color: #723ba3;
+  color: white;
+}
+
+a {
+  color: rgb(54, 112, 170);
+}
+.forgotPasswordLink {
+  text-align: center; 
+  margin-top: 5px; 
+  font-size: 0.9em;
+}
+.linkText {
+  color: #007bff;
+  text-decoration: none; 
+}
+
+.linkText:hover {
+  text-decoration: underline; 
+  color: #0056b3; 
+}

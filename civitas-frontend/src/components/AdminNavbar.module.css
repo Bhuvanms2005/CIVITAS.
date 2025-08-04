@@ -1,0 +1,261 @@
+/*.navbar {
+  background-color: #424242; 
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width:100%;
+}
+
+.navbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.adminLogo {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.adminLogo:hover {
+  color: #cccccc;
+}
+
+.hamburgerMenu {
+  font-size: 2em;
+  cursor: pointer;
+  color: white;
+}
+
+.navbarRight {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.profileSection {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.profileSection:hover {
+  background-color: #616161;
+}
+
+.profileIcon {
+  background-color: #e0e0e0; 
+  color: #424242; 
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.adminDropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  padding: 15px;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.adminDropdownMenu p {
+  margin: 5px 0;
+  color: #333;
+  font-size: 0.95em;
+}
+
+.adminDropdownMenu strong {
+  font-size: 1.1em;
+  color: #222;
+}
+
+.dropdownButton {
+  background-color: #d32f2f; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 0.9em;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.dropdownButton:hover {
+  background-color: #b71c1c;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  .adminLogo {
+    font-size: 24px;
+  }
+}*/
+
+.navbar {
+  background-color: #424242; 
+  color: white;
+  padding: 15px 40px; /* Slightly more padding for wide screens */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100vw; /* Ensures it stretches across the entire screen */
+  max-width: 100%; /* Prevent any accidental horizontal scroll */
+  box-sizing: border-box;
+}
+
+.navbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.adminLogo {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px; /* Slightly larger for large screens */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.adminLogo:hover {
+  color: #cccccc;
+}
+
+.hamburgerMenu {
+  font-size: 2em;
+  cursor: pointer;
+  color: white;
+}
+
+.navbarRight {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.profileSection {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.profileSection:hover {
+  background-color: #616161;
+}
+
+.profileIcon {
+  background-color: #e0e0e0; 
+  color: #424242; 
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.adminDropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  padding: 15px;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.adminDropdownMenu p {
+  margin: 5px 0;
+  color: #333;
+  font-size: 0.95em;
+}
+
+.adminDropdownMenu strong {
+  font-size: 1.1em;
+  color: #222;
+}
+
+.dropdownButton {
+  background-color: #d32f2f; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 0.9em;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.dropdownButton:hover {
+  background-color: #b71c1c;
+}
+
+/* Make sure it's responsive and adapts nicely to smaller screens too */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .adminLogo {
+    font-size: 24px;
+  }
+
+  .navbarRight {
+    margin-top: 10px;
+  }
+}

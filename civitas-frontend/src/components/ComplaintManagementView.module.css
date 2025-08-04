@@ -1,0 +1,187 @@
+.container {
+  padding: 30px;
+  background-color: #f8f9fa; 
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin: 20px auto;
+  max-width: 1000px; 
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  text-align: center; 
+}
+
+.heading {
+  color: #212121; 
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.subHeading {
+  font-size: 1.1em;
+  color: #424242;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.loading,
+.error,
+.noComplaintsMessage {
+  text-align: center;
+  font-size: 1.2em;
+  color: #555;
+  padding: 20px;
+}
+
+.error {
+  color: #d32f2f;
+}
+
+.complaintsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left; 
+}
+
+.complaintItem {
+  background-color: #ffffff; 
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.itemTitle {
+  margin: 0;
+  color: #3f51b5; 
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.description,
+.location,
+.submittedBy,
+.assignedTo {
+  color: #424242;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.photoContainer {
+  width: 100%;
+  max-height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+}
+
+.complaintPhoto {
+  max-width: 100%;
+  max-height: 200px;
+  display: block;
+  object-fit: contain;
+}
+
+.itemActions {
+  display: flex;
+  justify-content: flex-end; 
+  gap: 10px;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed #e0e0e0;
+}
+
+.actionButton {
+  background-color: #4caf50; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.actionButton:hover {
+  background-color: #388e3c;
+}
+
+.deleteButton {
+  background-color: #f44336; 
+}
+
+.deleteButton:hover {
+  background-color: #d32f2f;
+}
+
+
+.status {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.85em;
+  min-width: 90px;
+  text-align: center;
+}
+
+.status.pending {
+  background-color: #ffedcc;
+  color: #ff8c00;
+}
+
+.status.processongoing { 
+  background-color: #d1ecf1;
+  color: #007bff;
+}
+
+.status.resolved {
+  background-color: #d4edda;
+  color: #28a745;
+}
+
+.status.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    margin: 10px auto;
+  }
+  .heading {
+    font-size: 2rem;
+  }
+  .itemTitle {
+    font-size: 1.2em;
+  }
+  .itemActions {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch; 
+  }
+  .actionButton {
+    width: 100%;
+  }
+}

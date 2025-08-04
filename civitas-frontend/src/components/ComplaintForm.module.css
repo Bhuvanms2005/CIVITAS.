@@ -1,0 +1,277 @@
+.complaintFormContainer {
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin: 20px auto;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.heading {
+  color: #1a237e; 
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.selectedCategory {
+  font-size: 1.1em;
+  color: #3949ab; 
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.warningMessage {
+  color: #c62828; 
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+.complaintForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  align-items: center; 
+}
+
+.formGroup {
+  width: 100%;
+  max-width: 500px; 
+  text-align: left; 
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 1em;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="file"],
+.formGroup textarea,
+.formGroup select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  color: #333;
+  box-sizing: border-box;
+  margin-top: 5px; 
+}
+
+.formGroup textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.photoPreview {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  border-radius: 8px;
+  margin-top: 15px;
+  display: block; 
+  object-fit: contain; 
+}
+
+.locationButton {
+  background-color: #3949ab; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+  width: auto; 
+  display: block; 
+  max-width: 100%;
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+.locationButton:hover {
+  background-color: #283593;
+}
+
+.errorMessage {
+  color: #c62828;
+  font-size: 0.9em;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.mapPlaceholder {
+  background-color: #f0f8ff;
+  border: 1px dashed #a8d0f1;
+  padding: 40px;
+  border-radius: 8px;
+  color: #666;
+  font-style: italic;
+  font-size: 1.1em;
+  min-height: 200px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.submitButton {
+  background-color: #28a745; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 500px;
+}
+
+.submitButton:hover {
+  background-color: #218838;
+}
+
+.formGroup select {
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  appearance: none; 
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.2-6.4H18.8c-5%200-9.3%201.8-13.2%206.4s-6.4%209.3-6.4%2013.2c0%203.9%202.4%207.7%206.4%2013.2L139.2%20268.2c4.8%204.8%2010.6%207.2%2017.2%207.2s12.4-2.4%2017.2-7.2L287%2096.4c4-5.5%206.4-9.3%206.4-13.2%200-3.9-2.4-7.7-6.4-13.2z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 12px top 50%;
+  background-size: 12px auto;
+}
+
+
+.similarComplaintsAlert {
+  background-color: #fff3cd; 
+  border: 1px solid #ffeeba;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  text-align: left;
+  color: #856404; 
+}
+
+.similarComplaintsAlert h3 {
+  color: #856404;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.similarList {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.similarList li {
+  background-color: #fefefe;
+  border: 1px solid #ffeeba;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.similarList li:last-child {
+  margin-bottom: 0;
+}
+
+.supportButton {
+  background-color: #1a237e; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.supportButton:hover {
+  background-color: #0d47a1; 
+}
+.successMessage {
+  background-color: #d4edda; 
+  color: #155724; 
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+.errorMessage {
+  background-color: #f8d7da; 
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+
+@media (max-width: 768px) {
+  .complaintFormContainer {
+    padding: 20px;
+    margin: 10px auto;
+  }
+  .heading {
+    font-size: 1.8rem;
+  }
+  .complaintForm {
+    gap: 15px;
+  }
+  .formGroup {
+    max-width: 100%;
+  }
+  .locationButton, .submitButton, .similarComplaintsAlert {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .complaintFormContainer {
+    padding: 15px;
+  }
+  .formGroup label {
+    font-size: 0.9em;
+  }
+  .formGroup input[type="text"],
+  .formGroup textarea,
+  .formGroup select {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+  .locationButton, .submitButton, .supportButton {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+}

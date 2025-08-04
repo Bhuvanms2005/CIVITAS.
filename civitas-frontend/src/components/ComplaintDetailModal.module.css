@@ -1,0 +1,274 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1002;
+  font-family: 'Roboto', sans-serif;
+}
+
+.modalContent {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #555;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.closeButton:hover {
+  color: #333;
+}
+
+.modalHeading {
+  color: #212121;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.loading,
+.error,
+.noData {
+  text-align: center;
+  font-size: 1.2em;
+  color: #555;
+  padding: 50px 0;
+}
+
+.error {
+  color: #d32f2f;
+}
+.successMessage {
+  background-color: #d4edda; 
+  color: #155724; 
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.errorMessage {
+  background-color: #f8d7da; 
+  color: #721c24; 
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.detailSection {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #e0e0e0;
+  text-align: left;
+}
+
+.detailSection p {
+  margin: 8px 0;
+  color: #424242;
+  font-size: 1em;
+}
+
+.detailSection strong {
+  color: #212121;
+}
+
+.status {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.status.pending {
+  background-color: #ffedcc;
+  color: #ff8c00;
+}
+.status.processongoing {
+  background-color: #d1ecf1;
+  color: #007bff;
+}
+.status.resolved {
+  background-color: #d4edda;
+  color: #28a745;
+}
+.status.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.photoContainer {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.complaintPhoto {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.updatesSection {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #e0e0e0;
+  text-align: left;
+}
+
+.updatesSection h3 {
+  color: #212121;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.updatesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.updatesList li {
+  background-color: #f5f5f5;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+  color: #424242;
+}
+
+.adminActions {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.adminActions h3 {
+  color: #212121;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.actionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.actionGroup h4 {
+  color: #424242;
+  font-size: 1em;
+  margin: 0;
+}
+
+.actionSelect,
+.actionTextarea,
+.actionGroup input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95em;
+  box-sizing: border-box;
+}
+
+.actionTextarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.actionButton {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-end;
+  margin-top: 10px;
+}
+
+.actionButton:hover {
+  background-color: #303f9f;
+}
+
+.actionButton:disabled {
+  background-color: #99a2d4;
+  cursor: not-allowed;
+}
+
+
+.deleteButton {
+  background-color: #f44336;
+  align-self: flex-start;
+  width: auto;
+  margin-top: 20px;
+}
+
+.deleteButton:hover {
+  background-color: #d32f2f;
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    width: 95%;
+    padding: 20px;
+  }
+  .modalHeading {
+    font-size: 1.8rem;
+  }
+  .actionGroup {
+    align-items: stretch;
+  }
+  .actionSelect,
+  .actionTextarea,
+  .actionGroup input[type="file"],
+  .actionButton {
+    width: 100%;
+    align-self: stretch;
+  }
+  .deleteButton {
+    align-self: stretch;
+  }
+}

@@ -1,0 +1,161 @@
+/* src/components/AnnouncementManagementView.module.css */
+
+.container {
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin: 20px auto;
+  max-width: 900px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.heading {
+  color: #212121;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.subHeading {
+  font-size: 1.1em;
+  color: #424242;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.createButton {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.createButton:hover {
+  background-color: #303f9f;
+}
+
+.loading, .error, .noAnnouncementsMessage {
+  text-align: center;
+  font-size: 1.2em;
+  color: #555;
+  padding: 20px;
+}
+
+.error {
+  color: #d32f2f;
+}
+
+.announcementList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.announcementItem {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.itemTitle {
+  margin: 0;
+  color: #3f51b5;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.itemType {
+  background-color: #e0e0e0;
+  color: #616161;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.itemContent, .itemMeta {
+  color: #424242;
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.itemMeta {
+  color: #757575;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.itemActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed #e0e0e0;
+}
+
+.actionButton {
+  background-color: #2196F3; /* Blue for Edit */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.actionButton:hover {
+  background-color: #1976D2;
+}
+
+.deleteButton {
+  background-color: #f44336;
+}
+
+.deleteButton:hover {
+  background-color: #d32f2f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    margin: 10px auto;
+  }
+  .heading {
+    font-size: 2rem;
+  }
+  .itemActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .actionButton {
+    width: 100%;
+  }
+}

@@ -1,0 +1,184 @@
+/* src/components/NgoComplaintResolutionForm.module.css */
+
+.container {
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin: 50px auto;
+  max-width: 700px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.heading {
+  color: #1a237e;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.subHeading {
+  font-size: 1em;
+  color: #424242;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.complaintSummary {
+    text-align: left;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.complaintSummary h3 {
+    color: #3f51b5;
+    margin-bottom: 10px;
+}
+
+.complaintSummary p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #424242;
+}
+
+.photoContainer {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.complaintPhoto {
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 8px;
+}
+
+.resolutionForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.formGroup {
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 1em;
+}
+
+.formGroup input[type="file"],
+.formGroup textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  color: #333;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.formGroup textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.photoPreview {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  border-radius: 8px;
+  margin-top: 15px;
+  display: block;
+  object-fit: contain;
+}
+
+.submitButton {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 500px;
+}
+
+.submitButton:hover {
+  background-color: #303f9f;
+}
+
+.submitButton:disabled {
+  background-color: #99a2d4;
+  cursor: not-allowed;
+}
+
+.loading, .error {
+  text-align: center;
+  font-size: 1.2em;
+  color: #555;
+  padding: 20px;
+}
+
+.error {
+  color: #d32f2f;
+}
+
+.successMessage {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.errorMessage {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    margin: 10px auto;
+  }
+  .heading {
+    font-size: 1.8rem;
+  }
+  .resolutionForm {
+    gap: 15px;
+  }
+  .formGroup, .submitButton {
+    max-width: 100%;
+  }
+}

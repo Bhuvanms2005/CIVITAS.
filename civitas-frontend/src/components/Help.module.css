@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #eef1f4;
+  padding: 20px;
+  color: #333;
+}
+
+.helpContainer {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+  line-height: 1.7;
+}
+
+.helpContainer h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+.helpSection h2 {
+  color: #1e272e;
+  margin-top: 20px;
+}
+
+.helpSection p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.helpSection ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.helpSection ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.homeLink {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #00796b;
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid #00796b;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.homeLink:hover {
+  background-color: #723ba3;
+  color: white;
+}

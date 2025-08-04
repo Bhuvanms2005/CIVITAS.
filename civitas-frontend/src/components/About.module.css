@@ -1,0 +1,41 @@
+.aboutContainer {
+  max-width: 800px;
+  margin:30px auto;
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f8fc;
+}
+
+.aboutContainer h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+.aboutContainer p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.homeLink {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #00796b;
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid #00796b;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.homeLink:hover {
+  background-color: #723ba3;
+  color: white;
+}

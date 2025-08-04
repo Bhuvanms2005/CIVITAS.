@@ -1,0 +1,187 @@
+/* src/components/UserEditModal.module.css */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1002;
+  font-family: 'Roboto', sans-serif;
+}
+
+.modalContent {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  width: 90%;
+  max-width: 650px; /* Adjusted max width for user edit form */
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #555;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.closeButton:hover {
+  color: #333;
+}
+
+.modalHeading {
+  color: #212121;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.successMessage {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.errorMessage {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.userEditForm, .roleChangeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.roleChangeSection {
+  border-bottom: none; /* No bottom border for last section */
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+
+.formGroup {
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 1em;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup input[type="tel"],
+.formGroup select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  color: #333;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.submitButton {
+  background-color: #3f51b5; /* Admin primary accent color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 10px; /* Space from form elements */
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+}
+
+.submitButton:hover {
+  background-color: #303f9f;
+}
+
+.actionButton { /* Reusing general action button style */
+  background-color: #4caf50; /* Green for action */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center; /* Center the button in its flex container */
+  width: auto;
+}
+
+.actionButton:hover {
+  background-color: #388e3c;
+}
+
+.actionButton:disabled {
+  background-color: #99a2d4;
+  cursor: not-allowed;
+}
+
+.closeModalButton {
+  background-color: #9e9e9e; /* Gray for close */
+  margin-top: 25px; /* Space above close button */
+}
+
+.closeModalButton:hover {
+  background-color: #757575;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modalContent {
+    width: 95%;
+    padding: 20px;
+  }
+  .modalHeading {
+    font-size: 1.8rem;
+  }
+  .userEditForm, .roleChangeSection {
+    gap: 15px;
+  }
+  .formGroup, .submitButton, .actionButton {
+    max-width: 100%;
+  }
+}
