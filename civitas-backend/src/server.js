@@ -26,13 +26,23 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI;
 
+const allowedOrigins = [
+  process.env.FRONTEND_URL,  // Netlify
+  'http://localhost:3000'    // Local dev
+];
+
 const corsOptions = {
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('CORS not allowed from this origin'));
+        }
+    },
     methods: 'GET,HEAD,POST,PUT,PATCH,DELETE',
     credentials: true,
-    optionSuccessStatus: 200
+    optionsSuccessStatus: 200
 };
-
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
