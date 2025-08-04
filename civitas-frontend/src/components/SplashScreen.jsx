@@ -16,7 +16,8 @@ function SplashScreen() {
   return (
     <div className={styles.splashWrapper}>
       <div className={styles.splashContainer}>
-        <img src="/images/logo2.png" alt="CIVITAS Logo" className={styles.logo} />
+        <img src={`${process.env.PUBLIC_URL}/images/logo2.png`} alt="CIVITAS Logo" className={styles.logo} />
+
         <h1 className={styles.title}>CIVITAS</h1>
         <p className={styles.tagline}>Empowering Citizens, Building Communities</p>
       </div>
