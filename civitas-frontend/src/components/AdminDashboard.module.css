@@ -41,5 +41,8 @@
     margin: 10px;
     margin-left: 0; 
   }
+  .adminDashboardLayout{
+    padding-left:40px;
+  }
 }
 
