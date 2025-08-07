@@ -3,17 +3,19 @@ import styles from './Sidebar.module.css';
 
 const Sidebar = ({ isOpen, onClose, onMenuItemClick }) => {
   return (
+    <>
+  {isOpen && <div className={styles.overlay} onClick={onClose}></div>}
     <div className={`${styles.sidebar} ${isOpen ? styles.sidebarOpen : ''}`}>
       <button className={styles.closeButton} onClick={onClose}>&times;</button>
       <div className={styles.menuHeader}>
-        <h3>Main Menu</h3>
+        <h3 id="Heading">Main Menu</h3>
       </div>
       <ul className={styles.menuList}>
         <li onClick={() => onMenuItemClick('home')}>🏠 Dashboard Home</li>
       </ul>
       <div className={styles.menuDivider}></div>
       <div className={styles.menuHeader}>
-        <h3>Report a New Complaint</h3>
+        <h3 id="Heading">Report a New Complaint</h3>
       </div>
       <ul className={styles.menuList}>
         <li className={styles.categoryHeader}>1. Sanitation & Waste</li>
@@ -45,6 +47,7 @@ const Sidebar = ({ isOpen, onClose, onMenuItemClick }) => {
         <li onClick={() => onMenuItemClick('myComplaints')}>📋 My Complaints</li>
         <li onClick={() => onMenuItemClick('announcements')}>📢 Local Announcements</li>      </ul>
     </div>
+    </>
   );
 };
 

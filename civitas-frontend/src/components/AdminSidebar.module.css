@@ -14,7 +14,7 @@
   font-family: 'Roboto', sans-serif;
 }
 h3{
-  color:white;
+  color:rgb(12, 7, 77);
 }
 
 .sidebarOpen {
@@ -67,4 +67,76 @@ h3{
 .menuDivider {
   border-top: 1px solid #455a64;
   margin: 15px 0;
+}
+@media (max-width: 768px) {
+  .sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100%;
+  background-color: #263238; 
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.25);
+  transition: left 0.3s ease-in-out;
+  z-index: 999;
+  padding-top: 70px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  font-family: 'Roboto', sans-serif;
+}
+h3{
+  color:rgb(12, 7, 77);
+}
+
+.sidebarOpen {
+  left: 0;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #bdbdbd;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menuHeader {
+  padding: 15px 20px 10px;
+  color: #cfd8dc; 
+  font-size: 1.2em;
+  font-weight: 600;
+  border-bottom: 1px solid #455a64; 
+  margin-bottom: 5px;
+}
+
+.menuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuList li {
+  padding: 12px 20px;
+  color: #eceff1; 
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menuList li:hover {
+  background-color: #37474f; 
+  color: white;
+}
+
+.menuDivider {
+  border-top: 1px solid #455a64;
+  margin: 15px 0;
+}
 }

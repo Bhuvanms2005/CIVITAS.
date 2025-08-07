@@ -1,5 +1,5 @@
 .adminHomeContainer {
-  padding: 40px 60px; /* Increase padding for larger screens */
+  padding: 40px 60px; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,10 +25,10 @@
 
 .kpiGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Slightly larger cards */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
   gap: 30px;
   width: 100%;
-  max-width: 1000px; /* Full width */
+  max-width: 1000px; 
   margin-bottom: 40px;
 }
 
@@ -54,24 +54,24 @@
 
 .loading,
 .error,
-.placeholder { /* Unified style for text placeholders */
+.placeholder { 
   text-align: center;
-  font-size: 1.1em; /* Slightly smaller for placeholders */
-  color: #616161; /* Consistent text color */
-  padding: 15px; /* Added padding */
+  font-size: 1.1em; 
+  color: #616161; 
+  padding: 15px;
   font-style: italic;
-  flex-grow: 1; /* Allow it to fill space in flex containers */
-  display: flex; /* For centering content */
+  flex-grow: 1; 
+  display: flex; 
   align-items: center;
   justify-content: center;
 }
 
 .loading {
-  color: #3f51b5; /* Admin primary color for loading */
+  color: #3f51b5; 
     font-weight: bold;
 }
 .error {
-  color: #d32f2f; /* Admin error color */
+  color: #d32f2f; 
     font-weight: bold;
 }
 
@@ -95,17 +95,17 @@
 }
 .chartContainer {
   width: 1000px;
-  height: 300px; /* Crucial: Chart needs a defined height */
+  height: 300px; 
   margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1; /* Allows it to fill card height */
+  flex-grow: 1; 
 }
 
 .mapContainer {
   width: 1000px;
-  height: 400px; /* Increased height for Admin map */
+  height: 400px; 
   border-radius: 8px;
   overflow: hidden;
   margin-top: 10px;
@@ -122,8 +122,8 @@
   padding: 0;
   margin: 0;
   width: 100%;
-  max-height: 300px; /* Limit height for scrolling */
-  overflow-y: auto; /* Enable scrolling */
+  max-height: 300px; 
+  overflow-y: auto; 
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   background-color: #fcfcfc;
@@ -144,7 +144,7 @@
 }
 
 .activityItem small {
-  display: block; /* New line for date/by */
+  display: block; 
   color: #757575;
   font-size: 0.85em;
   margin-top: 4px;
@@ -153,12 +153,70 @@
 
 @media (max-width: 768px) {
   .adminHomeContainer {
-    padding: 10px;
+    /* Reduce padding for more space */
+    padding: 20px 40px;
   }
+
   .welcomeHeading {
-    font-size: 2rem;
+    /* Make heading smaller */
+    font-size: 1.8rem;
+    margin-bottom: 15px;
   }
+
+  .subHeading {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
   .kpiGrid {
+    /* The grid will stack automatically, but we can reduce the gap */
+    gap: 20px;
     grid-template-columns: 1fr;
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
   }
+  
+  .sectionPlaceholder {
+      /* Reduce placeholder padding */
+      padding: 30px 20px;
+  }
+
+  .sectionPlaceholder h2 {
+      font-size: 1.3em;
+  }
+  .kpiCard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  text-align: center;
+
+  /* Add this line for a more defined box */
+  border: 1px solid #e0e0e0;
 }
+.chartContainer {
+  /* This makes the chart container fit the mobile screen width */
+  width: 400px;
+}
+.your-section-title-class {
+  font-size: 0.2 rem; /* Or another size that looks good */
+}
+.mapContainer {
+  width: 100%;
+
+  /* Optional: A shorter height is often better for mobile views */
+  height: 300px; 
+}
+.activityItem {
+  /* Slightly reduce font size for a more compact view */
+  font-size: 0.9em;
+  width:400px;
+  /* Adjust padding slightly if needed */
+  padding: 10px 12px;
+}
+.your-activity-title-class {
+  font-size: 1.2rem;
+}
+}
+

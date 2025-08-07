@@ -111,3 +111,53 @@
   color: white;
   font-size: 1.2rem;
 }
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    background-color: rgba(142, 57, 117, 0.1); /* keep your navbar color */
+  }
+
+  .welcome {
+    font-size: 36px;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .navLinks a {
+    font-size: 18px;
+  }
+
+  .slideshowContainer {
+    height: 300px; /* reduce height for mobile */
+  }
+
+  .slideImage {
+    height: 300px;
+  }
+
+  .messageSection {
+    background-color: #BF9589; /* your background color */
+    padding: 20px;
+    text-align: center;
+  }
+
+  .message {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .homeWrapper {
+    min-height: 100vh;
+    background-color: #BF9589; /* extend bg color */
+  }
+}

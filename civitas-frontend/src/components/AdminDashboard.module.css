@@ -18,9 +18,6 @@
   box-sizing: border-box;
 }
 
-.shiftedContent {
-  margin-left: 280px; 
-}
 
 .loadingContainer,
 .errorContainer,
@@ -45,3 +42,4 @@
     margin-left: 0; 
   }
 }
+

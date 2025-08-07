@@ -1,4 +1,4 @@
-.sidebar {
+/*.sidebar {
   position: fixed;
   top: 0;
   left: -400px; 
@@ -7,7 +7,7 @@
   background-color: #f8f9fa; 
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
   transition: left 0.3s ease-in-out;
-  z-index: 999; 
+  z-index:5000;
   padding-top: 70px; 
   box-sizing: border-box;
   overflow-y: auto; 
@@ -90,11 +90,20 @@
   margin: 15px 0;
 }
 
-/* Optional: Shift main content when sidebar is open (from VolunteerDashboard.module.css) */
-/* This part ensures the main content area shifts to make space for the sidebar */
-/* You might already have this in VolunteerDashboard.module.css, but including here for reference */
 
-
+.shiftedContent {
+  margin-left: 100px;
+  transition: margin-left 0.3s ease-in-out;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 4000;
+}
 
 
 
@@ -102,15 +111,226 @@
   .sidebar {
     width: 250px; 
     left: -250px;
+    height: 100vh;
   }
-  /* On small screens, we typically don't shift the content,
-     the sidebar just overlays it. So, 'shiftedContent' might not be needed for mobile */
-  /*
-  .shiftedContent {
-    margin-left: 0;
-  }
-  */
+  
+  
   .subMenuItem {
     padding-left: 30px; 
   }
+}*/
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -400px;
+  width: 400px;
+  height: 100vh; /* full height */
+  background-color: #ffffff; /* Solid background for visibility */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s ease-in-out;
+  z-index: 9999;
+  padding-top: 70px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebarOpen {
+  left: 0;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #333;
+  cursor: pointer;
+  z-index: 10000; /* ensure above sidebar */
+}
+
+.closeButton:hover {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+.menuHeader {
+  padding: 15px 20px 10px;
+  color: #333;
+  font-size: 1.2em;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 5px;
+  margin-top: 12px;
+}
+
+.menuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuList li {
+  padding: 12px 20px;
+  color: #555;
+  font-size: 1.05em;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menuList li:hover {
+  background-color: #e9ecef;
+  color: #333;
+}
+
+.categoryHeader {
+  background-color: #f0f0f0;
+  color: #3949ab;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-top: 15px;
+}
+#Heading{
+  color:black;
+}
+.subMenuItem {
+  padding-left: 40px;
+  font-size: 0.95em;
+  color: #666;
+}
+
+.subMenuItem:hover {
+  background-color: #e2e6ea;
+}
+
+.menuDivider {
+  border-top: 1px solid #eee;
+  margin: 15px 0;
+}
+/* MOBILE */
+@media (max-width: 768px) {
+  /*.sidebar {
+    width: 500px;
+    left: -500px;
+  }
+  .subMenuItem {
+    padding-left: 30px;
+  }*/
+  .sidebar {
+  position: fixed;
+  top: 0;
+  left: -400px;
+  width: 400px;
+  height: 100vh; /* full height */
+  background-color: #ffffff; /* Solid background for visibility */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s ease-in-out;
+  z-index: 9999;
+  padding-top: 70px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebarOpen {
+  left: 0;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #333;
+  cursor: pointer;
+  z-index: 10000; /* ensure above sidebar */
+}
+
+.closeButton:hover {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+.menuHeader {
+  padding: 15px 20px 10px;
+  color: #333;
+  font-size: 1.2em;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 5px;
+  margin-top: 12px;
+}
+
+.menuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuList li {
+  padding: 12px 20px;
+  color: #555;
+  font-size: 1.05em;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menuList li:hover {
+  background-color: #e9ecef;
+  color: #333;
+}
+
+.categoryHeader {
+  background-color: #f0f0f0;
+  color: #3949ab;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-top: 15px;
+}
+
+.subMenuItem {
+  padding-left: 40px;
+  font-size: 0.95em;
+  color: #666;
+}
+
+.subMenuItem:hover {
+  background-color: #e2e6ea;
+}
+
+.menuDivider {
+  border-top: 1px solid #eee;
+  margin: 15px 0;
+}
+  
 }
