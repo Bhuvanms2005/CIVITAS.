@@ -24,7 +24,17 @@ const sendEmail = async (toEmail, subject, htmlBody) => {
     return { success: false, message: 'Failed to send email.' };
   }
 };
-
+const sendPasswordResetEmail = async (toEmail, resetLink) => {
+  const subject = 'Civitas Password Reset';
+  const htmlBody = `
+    <p>You requested a password reset.</p>
+    <p>Click the link below to reset your password:</p>
+    <a href="${resetLink}">${resetLink}</a>
+    <p>If you did not request this, please ignore this email.</p>
+  `;
+  return await sendEmail(toEmail, subject, htmlBody);
+};
 module.exports = {
-  sendEmail, 
+  sendEmail,
+  sendPasswordResetEmail, 
 };
