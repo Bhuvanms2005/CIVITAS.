@@ -56,7 +56,7 @@ exports.createComplaint = async (req, res) => {
         type: 'Point',
         coordinates: [parseFloat(longitude), parseFloat(latitude)],
       },
-      photo: `/uploads/${req.file.filename}`,
+      photo: req.file.filename,
       severity,
       submittedBy: req.user.id,
     });
@@ -362,7 +362,7 @@ exports.ngoResolveComplaint = async (req, res) => {
     // Add photo to beforeAfterPhotos if uploaded
     let photoUrl = null;
     if (req.file) {
-      photoUrl = `/uploads/${req.file.filename}`;
+      photoUrl = req.file.filename;
       complaint.beforeAfterPhotos.push({
         url: photoUrl,
         uploadedBy: req.user.id, // NGO who submitted the photo

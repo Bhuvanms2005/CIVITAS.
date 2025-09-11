@@ -147,7 +147,7 @@ const MyComplaintsList = ({ user }) => {
               {complaint.photo && (
                 <div className={styles.photoContainer}>
 <img 
-src={`https://civitas-37g6.onrender.com/uploads/${complaint.photo}`}      alt="Complaint" 
+src={`https://civitas-37g6.onrender.com${complaint.photo}`}      alt="Complaint" 
       className={styles.complaintPhoto} 
     />                </div>
               )}
