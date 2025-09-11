@@ -146,8 +146,10 @@ const MyComplaintsList = ({ user }) => {
               <p className={styles.location}>Location: {complaint.address}</p>
               {complaint.photo && (
                 <div className={styles.photoContainer}>
-                  <img src={`${window.location.origin.replace(':3000', ':5000')}${complaint.photo}`} alt="Complaint" className={styles.complaintPhoto} />
-                </div>
+<img 
+src={`https://civitas-37g6.onrender.com/uploads/${complaint.photo}`}      alt="Complaint" 
+      className={styles.complaintPhoto} 
+    />                </div>
               )}
               <p className={styles.submittedAt}>Submitted: {new Date(complaint.submittedAt).toLocaleString()}</p>
               {complaint.updates && complaint.updates.length > 0 && (

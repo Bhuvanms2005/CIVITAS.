@@ -1,0 +1,29 @@
+/* --- MAIN LEGEND BOX --- */
+/* Increase padding and font-size here to make the whole box bigger */
+.legend {
+  padding: 10px 15px;
+  font-family: Arial, sans-serif;
+  font-size: 16px; /* <-- INCREASE THIS FOR BIGGER TEXT */
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  line-height: 24px;
+  color: #555;
+}
+
+.legend h4 {
+  margin: 0 0 5px;
+  color: #333;
+  text-align: center;
+}
+
+/* --- COLORED SQUARES --- */
+/* Increase width and height here to make the color squares bigger */
+.legend i {
+  width: 20px; /* <-- INCREASE THIS */
+  height: 20px; /* <-- INCREASE THIS */
+  float: left;
+  margin-right: 8px;
+  opacity: 0.9;
+  border-radius: 3px;
+}

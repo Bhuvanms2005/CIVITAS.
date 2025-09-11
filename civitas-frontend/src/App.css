@@ -27,6 +27,21 @@
 .App-link {
   color: #61dafb;
 }
+.map-container .leaflet-container {
+  height: 400px;
+  width: 100%;
+  border-radius: 8px;
+  z-index: 1; 
+}
+.leaflet-control a {
+    font-size: 1.5rem; 
+    line-height: 28px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    display: block;
+    cursor: pointer;
+}
 
 @keyframes App-logo-spin {
   from {

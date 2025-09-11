@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './ComplaintForm.module.css';
+import InteractiveMap from '../components/InteractiveMap';
 
 const ComplaintForm = ({ user, category, subType }) => {
   const [photo, setPhoto] = useState(null);
@@ -51,7 +52,14 @@ const ComplaintForm = ({ user, category, subType }) => {
       setLocationError("Geolocation not supported by this browser.");
     }
   };
-
+const handleMapLocationChange = (latlng) => {
+    // latlng from Leaflet is { lat, lng }
+    const newPinLocation = { lat: latlng.lat, lon: latlng.lng };
+    setMapPinLocation(newPinLocation);
+    
+    // Optionally update the address field as well
+    setAddress(`Pinned Location: ${latlng.lat.toFixed(4)}, ${latlng.lng.toFixed(4)}`);
+  };
   const handlePhotoChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -219,14 +227,22 @@ const ComplaintForm = ({ user, category, subType }) => {
 
         <div className={styles.formGroup}>
           <label>Pin Location on Map (Required)</label>
-          <div className={styles.mapPlaceholder}>
-            <p>[Interactive Map Placeholder]</p>
-            {mapPinLocation ? (
-              <p>Pinned: {mapPinLocation.lat.toFixed(4)}, {mapPinLocation.lon.toFixed(4)}</p>
-            ) : (
-              <p>Drag pin to exact location or use current location button.</p>
-            )}
-          </div>
+          
+          {/* The InteractiveMap component is placed here */}
+          <InteractiveMap 
+            onLocationChange={handleMapLocationChange}
+            position={mapPinLocation} // Pass the state to control the map's pin
+          />
+
+          {mapPinLocation ? (
+            <p style={{ marginTop: '8px' }}>
+              Pinned: {mapPinLocation.lat.toFixed(4)}, {mapPinLocation.lon.toFixed(4)}
+            </p>
+          ) : (
+            <p style={{ marginTop: '8px' }}>
+              Click the map or use the location button to set a location.
+            </p>
+          )}
         </div>
 
         <div className={styles.formGroup}>
