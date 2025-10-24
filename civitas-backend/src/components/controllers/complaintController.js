@@ -56,7 +56,7 @@ exports.createComplaint = async (req, res) => {
         type: 'Point',
         coordinates: [parseFloat(longitude), parseFloat(latitude)],
       },
-      photo: req.file.filename,
+      photo: `/uploads/${req.file.filename}`,
       severity,
       submittedBy: req.user.id,
     });

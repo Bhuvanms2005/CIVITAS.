@@ -13,7 +13,7 @@ const zoneRoutes = require('./routes/zoneRoutes');
 const passport = require('passport');
 const session = require('express-session');
 const path = require('path');
-require('./config/passport-setup'); // Assuming this sets up your Passport strategies
+require('./config/passport-setup'); 
 
 console.log('SERVER DEBUG: Starting server initialization...');
 console.log('SERVER DEBUG: MONGO_URI loaded:', !!process.env.MONGODB_URI);
@@ -29,8 +29,8 @@ const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI;
 
 const allowedOrigins = [
-  process.env.FRONTEND_URL,  // Netlify
-  'http://localhost:3000'    // Local dev
+  process.env.FRONTEND_URL,  
+  'http://localhost:3000'    
 ];
 
 const corsOptions = {
