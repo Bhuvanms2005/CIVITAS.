@@ -13,6 +13,7 @@ const zoneRoutes = require('./routes/zoneRoutes');
 const passport = require('passport');
 const session = require('express-session');
 const path = require('path');
+const fs=require('fs');
 require('./config/passport-setup'); 
 
 console.log('SERVER DEBUG: Starting server initialization...');
@@ -27,7 +28,11 @@ console.log('SERVER DEBUG: GOOGLE_CALLBACK_URL loaded:', !!process.env.GOOGLE_CA
 const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI;
+const uploadPath = path.join(__dirname, '../uploads');
 
+if (!fs.existsSync(uploadPath)) {
+    fs.mkdirSync(uploadPath);
+}
 const allowedOrigins = [
   process.env.FRONTEND_URL,  
   'http://localhost:3000'    
@@ -61,8 +66,8 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-// Serve uploaded files statically from the 'uploads' directory
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// Serve uploaded files statically from the 'uploads' directory (use same uploadPath)
+app.use('/uploads', express.static(uploadPath));
 
 // MongoDB Connection
 mongoose.connect(MONGODB_URI, {

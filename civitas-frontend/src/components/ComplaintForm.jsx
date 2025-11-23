@@ -79,7 +79,7 @@ const handleMapLocationChange = (latlng) => {
         try {
           const token = localStorage.getItem('token');
           const res = await fetch(
-            `${API_BASE_URL}/complaints/similar?lat=${mapPinLocation.lat}&lon=${mapPinLocation.lon}&desc=${encodeURIComponent(description)}&category=${encodeURIComponent(category || '')}`,
+            `${API_BASE_URL}/complaints/similar?lat=${mapPinLocation.lat}&lon=${mapPinLocation.lon}&description=${encodeURIComponent(description)}&category=${encodeURIComponent(category || '')}`,
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -88,7 +88,7 @@ const handleMapLocationChange = (latlng) => {
           );
           const data = await res.json();
           if (res.ok) {
-            setSimilarComplaints(data.similar || []);
+            setSimilarComplaints(data.similarComplaints || data.similar || []);
           } else {
             console.warn('Could not fetch similar complaints:', data.message);
           }
@@ -96,6 +96,9 @@ const handleMapLocationChange = (latlng) => {
           console.error('Error fetching similar complaints:', err);
         }
       }
+      if (!location || !category || !description) {
+    return; // Don't call backend if any field is empty
+}
     };
 
     fetchSimilarComplaints();
@@ -184,7 +187,8 @@ const handleMapLocationChange = (latlng) => {
         setSeverity('moderate');
         setSimilarComplaints([]);
       } else {
-        setSubmissionError(data.message || 'Failed to submit complaint. Please try again.');
+        console.error('Server returned error for complaint submission:', data);
+        setSubmissionError(data.message || JSON.stringify(data) || 'Failed to submit complaint. Please try again.');
       }
     } catch (error) {
       console.error(error);

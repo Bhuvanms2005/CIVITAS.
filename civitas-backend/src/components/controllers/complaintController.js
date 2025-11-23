@@ -4,9 +4,15 @@ const multer = require('multer');
 const path = require('path');
 const fs=require('fs');
 
+// Ensure uploads directory is the same as backend's uploads folder
+const uploadsDir = path.join(__dirname, '..', 'uploads');
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads/');
+    cb(null, uploadsDir);
   },
   filename: (req, file, cb) => {
     cb(null, `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`);
@@ -37,6 +43,11 @@ const upload = multer({
 
 exports.createComplaint = async (req, res) => {
   try {
+    // Diagnostic logs to aid debugging when clients hit server errors
+    console.log('createComplaint called. user:', req.user ? req.user.id : null);
+    console.log('createComplaint req.body:', req.body);
+    console.log('createComplaint req.file:', req.file);
+
     if (!req.file) {
       return res.status(400).json({ success: false, message: 'Photo is required for the complaint.' });
     }
@@ -56,7 +67,7 @@ exports.createComplaint = async (req, res) => {
         type: 'Point',
         coordinates: [parseFloat(longitude), parseFloat(latitude)],
       },
-      photo: `/uploads/${req.file.filename}`,
+      photo: `uploads/${req.file.filename}`,
       severity,
       submittedBy: req.user.id,
     });
@@ -75,7 +86,9 @@ exports.createComplaint = async (req, res) => {
       return res.status(400).json({ success: false, message: messages.join(', ') });
     }
     console.error('Error creating complaint:', error);
-    res.status(500).json({ success: false, message: 'Server error during complaint submission.' });
+    // In development return the error message to client for faster debugging
+    const message = process.env.NODE_ENV === 'development' ? error.message || 'Server error during complaint submission.' : 'Server error during complaint submission.';
+    res.status(500).json({ success: false, message });
   }
 };
 
@@ -262,11 +275,15 @@ exports.supportComplaint = async (req, res) => {
 // @access  Private (used by ComplaintForm)
 exports.getSimilarComplaints = async (req, res) => {
   try {
-    const { lat, lon, category, description } = req.query;
-    const userId = req.user.id; // User making the request
+    // Accept both `description` and `desc` query params for compatibility with frontend
+    const lat = req.query.lat;
+    const lon = req.query.lon;
+    const category = req.query.category;
+    const description = req.query.description || req.query.desc;
+    const userId = req.user && req.user.id; // User making the request
 
     if (!lat || !lon || !category || !description) {
-      return res.status(400).json({ success: false, message: 'Location, category, and description are required to find similar complaints.' });
+      return res.status(400).json({ success: false, message: 'Location (lat, lon), category, and description/desc query parameters are required to find similar complaints.' });
     }
 
     const latitude = parseFloat(lat);
@@ -325,6 +342,8 @@ exports.getSimilarComplaints = async (req, res) => {
       success: true,
       count: formattedSimilarComplaints.length,
       similarComplaints: formattedSimilarComplaints,
+      // keep backwards-compatible alias expected by some frontend code
+      similar: formattedSimilarComplaints,
       message: 'Similar complaints fetched successfully.'
     });
 
