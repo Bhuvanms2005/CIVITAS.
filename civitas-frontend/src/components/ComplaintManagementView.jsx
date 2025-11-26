@@ -122,7 +122,7 @@ const ComplaintManagementView = ({ user }) => {
               {complaint.photo && (
                 <div className={styles.photoContainer}>
                   <img
-                    src={`${API_BASE_URL.replace('/api', '')}${complaint.photo}`}
+                    src={`https://civitas-37g6.onrender.com/${complaint.photo}`}
                     alt="Complaint"
                     className={styles.complaintPhoto}
                   />
