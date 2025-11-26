@@ -147,9 +147,11 @@ const MyComplaintsList = ({ user }) => {
               {complaint.photo && (
                 <div className={styles.photoContainer}>
 <img 
-src={`https://civitas-37g6.onrender.com/uploads/${complaint.photo}`}      alt="Complaint" 
-      className={styles.complaintPhoto} 
-    />                </div>
+  src={`https://civitas-37g6.onrender.com/${complaint.photo}`} 
+  alt="Complaint"
+  className={styles.complaintPhoto}
+/>
+                </div>
               )}
               <p className={styles.submittedAt}>Submitted: {new Date(complaint.submittedAt).toLocaleString()}</p>
               {complaint.updates && complaint.updates.length > 0 && (
