@@ -34,6 +34,13 @@ const uploadNGOResolutionPhoto = multer({
 
 exports.createComplaint = async (req, res) => {
   try {
+    console.log('CREATE COMPLAINT DEBUG: req.file =', req.file);
+try {
+  const savedFiles = fs.readdirSync(path.join(__dirname, '../../../uploads'));
+  console.log('CREATE COMPLAINT DEBUG: uploads folder listing:', savedFiles.slice(0,50));
+} catch (e) {
+  console.log('CREATE COMPLAINT DEBUG: could not read uploads dir:', e.message);
+}
     if (!req.file) {
       return res.status(400).json({ success: false, message: 'Photo is required for the complaint.' });
     }

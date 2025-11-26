@@ -13,13 +13,17 @@ if (!fs.existsSync(uploadsDir)) {
 // Configure multer storage
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
+    console.log('UPLOAD DEBUG: destination called. uploadsDir =', uploadsDir);
     cb(null, uploadsDir);
   },
   filename: (req, file, cb) => {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
-    cb(null, uniqueSuffix + path.extname(file.originalname));
+    const finalName = uniqueSuffix + path.extname(file.originalname);
+    console.log('UPLOAD DEBUG: filename called. original:', file.originalname, 'final:', finalName);
+    cb(null, finalName);
   },
 });
+
 
 // Filter only images/videos
 const fileFilter = (req, file, cb) => {

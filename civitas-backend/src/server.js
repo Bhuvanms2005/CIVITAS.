@@ -29,7 +29,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI;
 const uploadPath = path.join(__dirname, '../uploads');
-
+const uploadsDir = path.join(__dirname, '../../uploads');
 if (!fs.existsSync(uploadPath)) {
     fs.mkdirSync(uploadPath);
 }
