@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const { protect, authorizeRoles } = require('../middleware/authMiddleware');
-const { createComplaint, uploadComplaintPhoto, getMyComplaints, reraiseComplaint,getCityComplaintStats, getLocalComplaints, supportComplaint, getSimilarComplaints, ngoResolveComplaint, uploadMiddlewareNGOResolutionPhoto } = require('../components/controllers/complaintController'); 
+const {  getMyComplaints, reraiseComplaint,getCityComplaintStats, getLocalComplaints, supportComplaint, getSimilarComplaints, ngoResolveComplaint, uploadMiddlewareNGOResolutionPhoto } = require('../components/controllers/complaintController'); 
+const { createComplaint } = require('../components/controllers/complaintController');
+const uploadComplaintPhoto = require('../middlewares/uploadComplaintPhoto');
 
 router.post(
   '/',
