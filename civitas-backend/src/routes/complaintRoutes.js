@@ -3,7 +3,7 @@ const router = express.Router();
 const { protect, authorizeRoles } = require('../middleware/authMiddleware');
 const {  getMyComplaints, reraiseComplaint,getCityComplaintStats, getLocalComplaints, supportComplaint, getSimilarComplaints, ngoResolveComplaint, uploadMiddlewareNGOResolutionPhoto } = require('../components/controllers/complaintController'); 
 const { createComplaint } = require('../components/controllers/complaintController');
-const uploadComplaintPhoto = require('../middlewares/uploadComplaintPhoto');
+const uploadComplaintPhoto = require('../middleware/uploadComplaintPhoto');
 
 router.post(
   '/',
