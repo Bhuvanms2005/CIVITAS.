@@ -424,7 +424,7 @@ const ComplaintDetailModal = ({ complaintId, onClose, API_BASE_URL, onComplaintU
 
         {complaint.photo && (
           <div className={styles.photoContainer}>
-            <img src={`${API_BASE_URL.replace('/api', '')}${complaint.photo}`} alt="Complaint" className={styles.complaintPhoto} />
+            <img src={`${API_BASE_URL.replace('/api', '')}/${complaint.photo}`} alt="Complaint" className={styles.complaintPhoto} />
           </div>
         )}
 
@@ -524,7 +524,7 @@ const ComplaintDetailModal = ({ complaintId, onClose, API_BASE_URL, onComplaintU
                     <div className={styles.uploadedPhotosGrid}>
                         {complaint.beforeAfterPhotos.map((photoObj, index) => (
                             <div key={index} className={styles.uploadedPhotoItem}>
-                                <img src={`${API_BASE_URL.replace('/api', '')}${photoObj.url}`} alt={`Before/After ${index + 1}`} className={styles.complaintPhoto} />
+                                <img src={`${API_BASE_URL.replace('/api', '')}/${photoObj.url}`} alt={`Before/After ${index + 1}`} className={styles.complaintPhoto} />
                                 <small>{new Date(photoObj.uploadedAt).toLocaleString()} by {photoObj.uploadedBy?.firstName || photoObj.uploadedBy?.email}</small>
                             </div>
                         ))}
